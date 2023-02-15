@@ -1,7 +1,7 @@
 <?php
 function db_init()
 {
-  $pdo = new PDO("mysql:host=ftp2.sim.zdrv.com;dbname=DBzd2G15", "zd2G15", "AS5XKG");
+  $pdo = new PDO("mysql:host=*********;dbname=********", "******", "******");
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $pdo->exec("set names utf8");
   return $pdo;
