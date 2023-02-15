@@ -1,0 +1,570 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 黎ミン R;
+}
+
+
+body {
+  height: 100%;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header {
+  width: 100vw;
+  height: 65px;
+  background: #3094fb;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1 {
+  color: #fff;
+  line-height: 2.2;
+  padding-left: 20px;
+}
+
+.fa-twitter {
+  color:#fff;
+}
+
+.fa-bars {
+  font-size: 40px;
+  line-height: 1.5;
+  color: #fff;
+  padding-right: 20px;
+}
+
+.fa-bars,
+.tweet-delete input[type="submit"],
+.nav a,
+.nav-close_button,
+.post-cancel,
+.posted-tweet input[type="submit"],
+.posted-tweet .fa-comments,
+.others input[type="submit"],
+.mypage input[type="submit"],
+.mypage .fa-comment-medical  {
+  cursor: pointer;
+}
+
+.posted_comment {
+  width: 95vw;
+  height: 165px;
+  margin: 0 auto 5px;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+.posted_comment:last-child {
+  margin-bottom: 200px;
+}
+
+.text {
+  /* width: 80%; */
+  height: 115px;
+  text-align: left;
+  padding: 10px 5px 5px 5px;
+  overflow: auto;
+  font-size: 16px;
+}
+
+.like_count {
+  padding: 15px 15px 0 15px;;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-thumbs-up {
+  cursor: pointer;
+}
+
+.fa-thumbs-up:before {
+  cursor: pointer;
+}
+
+.read-more {
+  margin-left: 20px;
+  font-size: 18px;
+  color: blue;
+}
+
+footer p {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  font-size: 2rem;
+  padding: 3px 0;
+  background: #3094fb;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer span {
+  margin: 0 7vw 0;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
+}
+
+.fa-user-circle {
+  font-size: 40px;
+  margin: 10px 20px 0 10px;
+}
+
+.flex_container {
+  display: flex;
+}
+
+.flex_container a {
+  color :#000;
+}
+
+.login-user_info {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.user_icon {
+  padding-left: 5px;
+  font-size: 55px;
+}
+
+.user_icon span {
+  font-size: 16px;
+}
+
+.inner_flex p {
+  font-size: 16px;
+  padding-right: 5px;
+}
+
+.mypage .fa-comment-medical,.posted-tweet .fa-comments {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  font-size: 60px;
+  color: #3094fb;
+  z-index: 10;
+  opacity: 0.9;
+}
+
+.mypage .fa-user,.others .fa-users,.follow .fa-handshake {
+  color: #00ffa1;
+}
+
+/* ここから途中で作成したもの */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow-x: hidden;
+}
+
+div.post-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 100vw;
+  opacity: 0;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.2s ease;
+  z-index: 100;
+}
+
+div.show {
+  left: 0;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+.post-cancel{
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+  z-index: 2;
+}
+
+form.tweet-form {
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.cancel-position{
+  text-align: right;
+  padding-right: 20px;
+  margin-bottom: 20vh;
+}
+
+textarea.tweet {
+  width: 350px;
+  height: 150px;
+  resize: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 黎ミン R;
+}
+
+.mypage input[type="submit"],.posted-tweet input[type="submit"] {
+  font-size: 15px;
+  font-weight: bold;
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.posted-tweet .add-follow {
+  text-align: right;
+}
+
+.posted-tweet .add-follow input[type="submit"]{
+  font-size: 15px;
+  width: 120px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.others input[type="text"]{
+  width: 60vw;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.others input[type="submit"]{
+width: 50px;
+height: 30px;
+margin-left: 5px;
+}
+
+.error {
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+
+/* postedtweetページ */
+
+.posted-tweet header {
+  margin-bottom: 0;
+}
+
+.others-comment {
+  margin: 30px auto 35vh;
+}
+
+.posted-tweet .text {
+  padding: 5px 10px;
+  height:100%;
+  font-size: 18px;
+}
+
+.posted-tweet div.posted_comment {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 5px;
+  border-bottom: 1px solid #666;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.comment-title {
+  margin: 30px 0 15px 0;
+}
+
+.comments {
+  width: 95vw;
+    height: 130px;
+    margin: 0 auto 5px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.comments:last-child {
+  margin-bottom: 25vh;
+}
+
+.comments .text {
+  width: 100%;
+  height: 100px;
+  overflow: auto;
+}
+
+.comments .date {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.posted-user_info {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  display: flex;
+  justify-content: center;
+}
+
+.posted-tweet .posted-user_info .user_icon {
+  font-size: 45px;
+  margin: 10px 10px 10px 0;
+}
+
+.posted-user_info h2 {
+  line-height: 2.2;
+  padding: 7px 0 7px 0;
+}
+
+.posted-tweet .tweet-delete {
+  text-align: right;
+  margin: 0 20px 10px 0;
+}
+
+.tweet-delete input[type="submit"] {
+  width: 60px;
+  height: 35px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px;
+}
+
+
+/* ログアウトページの指定 */
+
+.logout h2 {
+  text-align: center;
+  margin: 20vh 0 3vh 0;
+}
+.logout p {
+  text-align: center;
+}
+
+.logout input[type="submit"]{
+  width: 120px;
+  height: 40px;
+  font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* signoutページの指定 */
+.signout h2 {
+  margin: 5vh 0 3vh 0;
+}
+
+.signout main li{
+  text-align: left;
+  margin-top: 1rem;
+  padding: 0 3%;
+}
+
+.check {
+  margin: 5vh auto 3vh;
+  width: 200px;
+}
+.signout input[type="checkbox"],.signout label {
+  cursor: pointer;
+}
+
+.signout .no_checked {
+  opacity: 0.5;
+}
+.signout p:nth-of-type(3) {
+  margin-bottom: 100px;
+}
+
+/* バーガー内のnavのスタイル */
+div.nav{
+  width: 60vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -70vw;
+  background-color: #3094fb;
+  padding-top: 20vh;
+  z-index: 200;
+  transition: all .2s ease;
+}
+
+div.nav-show {
+  height: 100%;
+  right: 0;
+  transition: all 0.2s ease;
+}
+
+.nav-close_button {
+  right: 20px;
+  position: absolute;
+  top: 10px;
+  font-size: 40px;
+  color: #fff;
+}
+
+nav ul {
+  text-align: center;
+}
+
+nav a {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  color:#fff;
+  font-weight: bold;
+  line-height: 4;
+}
+
+/*画面幅が812px以上の時のレイアウト*/
+@media screen and (min-width:768px) {
+  .posted-tweet div.posted_comment{
+    width: 75vw;
+    border-radius: 0;
+  }
+
+  .posted-tweet .text {
+    font-size: 25px;
+  }
+
+  .comments {
+    width: 75vw;
+  }
+
+  .signout main li{
+    text-align: center;
+  }
+}
+
+
+/* contactページのスタイル指定 */
+
+.contact form {
+  font-weight: bold;
+}
+.contact h2 {
+  margin: 4vh 0 5vh 0;
+  padding-bottom: 2vh;
+  border-bottom: 2px solid;
+}
+.contact form p {
+  margin-top: 5px;
+}
+.contact form p:nth-of-type(3) {
+  margin-top: 3vh;
+}
+
+.contact form input[type="text"] {
+  margin-left: 85px;
+  border: 2px solid #999;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+.contact form input[type="email"] {
+  margin-left: 5px;
+  border: 2px solid #999;
+  border-radius: 5px;
+  padding-left: 5px;
+} 
+
+.contact form textarea {
+  margin: 0 auto;
+  width: 300px;
+  height: 150px;
+  display: block;
+  border:2px solid #999;
+  border-radius: 5px;
+}
+
+.contact p:nth-of-type(4) {
+  margin-bottom: 100px;
+}
+
+.contact .error {
+  text-align: center;
+  display: block;
+  font-size: 15px;
+}
+
+.send-text {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.send-error {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* フォローリスト&フォローするユーザーページのスタイル指定 */
+.followlist .fa-handshake {
+  color: #00ffa1;
+}
+
+.followlist .login-user_info  {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 3vw;
+}
+
+.followlist .login-user_info a {
+  color:#000;
+}
+
+.followlist .follow_button {
+  width : 125px;
+  margin-top: 3vh;
+  height: 50px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 2px 0px 0px;
+  cursor: pointer;
+} 
+
+.followlist .nofollow {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10vh;
+  color: #999;
+} 
+
+.followuser .follow_button {
+    background: #fff;
+    width: 100px;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    box-shadow: 0px 2px 0px 0px;
+    color: #000;
+    cursor: pointer;
+}
+
+.followuser .follow_button:active,.followuser .follow_button:focus {
+  outline: 0;
+  box-shadow: none;
+}
+

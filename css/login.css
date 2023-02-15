@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+
+    }
+
+    header,
+    main {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    header {
+      width: 100vw;
+      height: 65px;
+      background: #3094fb;
+      margin-bottom: 15vh;
+    }
+
+    header h1 {
+      color: #fff;
+      line-height: 2.2;
+    }
+
+    main p {
+      margin: 0 20px;
+    }
+
+    input[type=text] {
+      margin:20px 0 5px 10px;
+      width: 200px;
+      height: 20px;
+    }
+
+    input[type=password] {
+      margin-left: 12px;
+      width: 200px;
+      height: 20px;
+    }
+
+    p input[type=submit] {
+      width: 100px;
+      margin: 20px auto;
+    }
+
+    .signup {
+      color: #444;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    span.error {
+      font-size: 14px;
+      color: red;
+    }
